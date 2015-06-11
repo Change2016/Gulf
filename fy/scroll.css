@@ -1,0 +1,63 @@
+/* 
+ * Gulf 2015 6 11
+ */
+*{
+	padding:0;
+	margin: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 62.5%;
+}
+#pages{
+	max-width: 480px;
+	margin: 0 auto;
+	clear: both;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;	
+}
+#page4,#page3,#page1,#page2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: green;	
+}
+#page2{
+	top: 100%;
+	z-index: 999;
+	background: blue;
+}
+#page3{
+	background: yellow;	
+}
+#pages>div:nth-child(3){
+	top: 100%;
+	z-index: 999;
+}
+#pages>div:last-child{
+	position: absolute;
+	top: -100%;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	background: orange;	
+}
+#pages>div:first-child{
+	z-index: 99;	
+}
+header{
+	width: 100%;
+	height: 3rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 3rem;
+	text-align: center;	
+}
