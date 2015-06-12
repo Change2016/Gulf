@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+  *{
+	  margin: 0;
+	  padding: 0;  
+  }
+  li{
+	  list-style: none;  
+  }
+  #ecosphere{
+	  margin: 0 auto;
+	  width: 1000px;
+	  height: 397px;
+	  margin-bottom: 70px;
+	  border: solid 1px rgb(113,113,113);
+	  margin-top: 100px;
+	  position: relative;
+	  overflow: hidden;
+	  
+  }
+  #ecosphere ul{
+	  height: 397px;
+	  width: 2010px;
+	  overflow: hidden;
+  }
+  #ecosphere ul li a,#ecosphere ul li{
+	  display: block;
+	  width: 196px;
+	  height: 196px;
+	  float: left;
+	  margin-right: 5px;  
+  }
+  #ecosphere ul li{
+	  position: relative;
+	  overflow: hidden; 
+  }
+  #ecosphere ul li div{
+	  position: absolute;
+	  height: 45px;
+	  width: 250px;
+	  background: #fff;
+  }
+  #ecosphere ul li.top div{
+	  top: -45px;  
+  }
+  #ecosphere .top .rotatR,#ecosphere .bottom .rotatL,#ecosphere .top .rotatL,#ecosphere .bottom .rotatR{
+	  right: 0px;  
+  }
+  #ecosphere .translateB,#ecosphere .translateT,#ecosphere .top .rotatR,#ecosphere .bottom .rotatL{
+	  left: 0px;  
+  }
+  #ecosphere ul li.bottom div{
+	  bottom: -45px;  
+  }
+  #ecosphere ul li a{
+	  background: red;  
+  }
+  #ecosphere .top{
+	  margin-bottom: 5px;  
+  }
+  /*旋转变形*/
+  #ecosphere .rotatL{
+	  -webkit-transform-origin: right bottom;
+	  transform-origin: right bottom;
+	  -ms-transform-origin: right bottom;
+	  -moz-transform-origin: right bottom;
+	  transform: rotate(-10deg);
+	  -webkit-transform: rotate(-10deg);
+	  -ms-transform: rotate(-10deg);
+	  -moz-transform: rotate(-10deg);
+  }
+  #ecosphere .bottom .rotatL{
+	  transform-origin: left top;
+	  -webkit-transform-origin: left top;  
+  }
+  #ecosphere .rotatR{
+	  transform-origin: left bottom;
+	  -webkit-transform-origin: left bottom;
+	  -ms-transform-origin: left bottom;
+	  -moz-transform-origin: left bottom;
+	  transform: rotate(10deg);
+	  -webkit-transform: rotate(10deg);
+	  -ms-transform: rotate(10deg);
+	  -moz-transform: rotate(10deg);  
+  }
+  #ecosphere .bottom .rotatR{
+	  transform-origin: right top;
+	  -webkit-transform-origin: right top;  
+  }
+  #ecosphere .translateB{
+	  transform: translateY(34px);
+	  -webkit-transform: translateY(34px); 
+  }
+  #ecosphere .translateT{
+	   transform: translateY(-34px);
+	  -webkit-transform: translateY(-34px);  
+  }
+  #ecosphere .colorA{
+	  background: rgb(89,187,214);  
+  }
+  
+  #ecosphere .colorB{
+	  background: rgb(2,171,226);
+  }
+  #ecosphere .colorC{
+	  background: rgb(133,194,39);
+  }
+  #ecosphere .colorD{
+	  background: rgb(63,69,69); 
+  }
+  /*滚动条样式*/
+.jscrollbar {
+	position: relative
+	}
+.jscrollbar .x, .jscrollbar .y{
+	position: absolute; 
+	background: #4C0440;
+	background: rgba(0,0,0,.3);
+	}
+.jscrollbar .x{
+	width: 100%; 
+	left: 0; 
+	bottom:0
+	}
+.jscrollbar .y{
+	height: 100%; 
+	top: 0; 
+	right: 0
+	}
+.jscrollbar .x .thumb, .jscrollbar .y .thumb{
+	position: absolute; 
+	background:#4C0440;
+	background: rgba(0,0,0,.6); 
+	border-radius: 5px
+	}
+.jscrollbar .x .thumb{
+	height: 100%; 
+	bottom:0
+	}
+.jscrollbar .y .thumb{
+	width: 100%; 
+	left:0
+	}
+</style>
+</head>
+<body>
+<div id="ecosphere">
+   <ul>
+     <li class="top"><div class="rotatL"></div><a href=""></a></li>
+     <li class="top"><div class="rotatR"></div><a href="" class="colorA"></a></li>
+     <li class="top"><div class="translateB"></div><a href=""></a></li>
+     <li class="top "><div class="rotatL"></div><a href="" class="colorB"></a></li>
+     <li class="top"><div class="rotatR"></div><a href=""></a></li>
+     <!--第二个循环s，修改循环的时候要记得修改ul的宽度值-->
+     <li class="top"><div class="rotatL"></div><a href=""></a></li>
+     <li class="top"><div class="rotatR"></div><a href="" class="colorA"></a></li>
+     <li class="top"><div class="translateB"></div><a href=""></a></li>
+     <li class="top "><div class="rotatL"></div><a href="" class="colorB"></a></li>
+     <li class="top"><div class="rotatR"></div><a href=""></a></li>
+     <!--第二个循环e，修改循环的时候要记得修改ul的宽度值-->
+     <li class="bottom"><div class="rotatR"></div><a href="" class="colorB"></a></li>
+     <li class="bottom"><div class="rotatL"></div><a href=""></a></li>
+     <li class="bottom"><div class="translateT"></div><a href="" class="colorC"></a></li>
+     <li class="bottom"><div class="rotatR"></div><a href=""></a></li>
+     <li class="bottom"><div class="rotatL"></div><a href="" class="colorD"></a></li>
+     
+     <li class="bottom"><div class="rotatR"></div><a href="" class="colorB"></a></li>
+     <li class="bottom"><div class="rotatL"></div><a href=""></a></li>
+     <li class="bottom"><div class="translateT"></div><a href="" class="colorC"></a></li>
+     <li class="bottom"><div class="rotatR"></div><a href=""></a></li>
+     <li class="bottom"><div class="rotatL"></div><a href="" class="colorD"></a></li>
+     <!--第二个循环s，修改循环的时候要记得修改ul的宽度值-->
+     <li class="bottom"><div class="rotatR"></div><a href="" class="colorB"></a></li>
+     <li class="bottom"><div class="rotatL"></div><a href=""></a></li>
+     <li class="bottom"><div class="translateT"></div><a href="" class="colorC"></a></li>
+     <li class="bottom"><div class="rotatR"></div><a href=""></a></li>
+     <li class="bottom"><div class="rotatL"></div><a href="" class="colorD"></a></li>
+     <!--第二个循环e，修改循环的时候要记得修改ul的宽度值-->
+   </ul>
+</div>
+<script type="text/javascript" src="jquery1.8.1.min.js"></script>
+<script type="text/javascript" src="jquery.jscrollbar-2.0.0.min.js"></script>
+<script type="text/javascript">                                           
+ $(function(){
+        $('#ecosphere').jscrollbar(
+		  {width: 15}
+		);
+    });                                 
+</script>
+</body>
+</html>

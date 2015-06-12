@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>插件演示</title>
+
+    <style>
+	 * @fileOverview 
+ * @author daiying.zhang
+ */
+
+
+.mod-footer{}
+.jscrollbar {position: relative}
+.jscrollbar .x, .jscrollbar .y{position: absolute; background: #4C0440;background: rgba(0,0,0,.3);}
+.jscrollbar .x{width: 100%; left: 0; bottom:0}
+.jscrollbar .y{height: 100%; top: 0; right: 0}
+
+.jscrollbar .x .thumb, .jscrollbar .y .thumb{position: absolute; background:#4C0440;background: rgba(0,0,0,.6); border-radius: 5px}
+.jscrollbar .x .thumb{height: 100%; bottom:0}
+.jscrollbar .y .thumb{width: 100%; left:0}
+        body{
+            padding:0 0 10px 0;
+            margin:0;
+            font:16px/1.3em "Microsoft Yahei";
+        }
+        img{display: block}
+        #test2{
+            margin: 0 auto;
+            width: 630px;
+            overflow: hidden;
+            height: 443px;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mod-main">
+    <div class="body">
+        <div id="test2">
+            <img src="img1.jpg" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="jquery1.8.1.min.js"></script>
+<script type="text/javascript" src="jquery.jscrollbar-2.0.0.min.js"></script>
+<script>
+    $(function(){
+        $('#test2').jscrollbar();
+    });
+</script>
+</body>
