@@ -1,0 +1,224 @@
+/*
+ *Gulf 2015 6 9
+ */
+*{
+	margin: 0;
+	padding: 0;	
+}
+body{
+	font-size: 62.5%;
+	max-width: 480px;
+	margin: 0 auto;
+	width: 100%;
+	overflow-x: hidden;
+}
+#pages{
+	width: 100%;
+	overflow-x: hidden;
+	position: relative;
+}
+#page1 header img{
+	display: block;
+	width: 100%;
+	margin: 0 auto;	
+}
+#list dl{
+	padding: .5rem 0rem;
+	float: left;
+	width: 100%;
+	border-bottom: solid 1px #CCC;
+}
+#list dl dt{
+	float: left;
+	margin-left: 2%;
+	width: 38%;
+	height: 5rem;
+	border-radius: .3rem;
+	overflow: hidden;
+	border: solid 1px #CCC;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	
+}
+#list dl dt img{
+	display: block;
+	width: 100%;
+	vertical-align: middle;
+}
+#list dl dd{
+	float: left;
+	width: 60%;
+    height: 5rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: .2rem 1.8rem .2rem .2rem;
+    position: relative;
+}
+#list dl dd header{
+	font-size: 1.2rem;	
+}
+#list dl dd:after{
+	content:">";
+	display: block;
+	position: absolute;
+	right: .1rem;
+	top: 0px;
+	line-height: 5rem;
+	font-size: 1.8rem;
+	color: #CCC;	
+}
+.clear{
+	clear: both;	
+}
+.ani{
+	-webkit-animation: scrollL 0.6s ease-in-out 0.2s forwards;
+	animation: scrollL 0.6s ease-in-out 0.2s forwards;
+}
+.back{
+	-webkit-animation: back 0.5s ease-in-out 0.2s forwards;
+	animation: back 0.5s ease-in-out 0.2s forwards;
+}
+@-webkit-keyframes back{
+	0%{
+		ritht: 0;	
+	}
+	100%{
+		right: -100%;	
+	}
+}
+@-webkit-keyframes scrollL{
+	0%{
+		right: -100%;	
+	}
+	100%{
+		right: 0;
+	}
+}
+#page2{
+	position: absolute;
+	right: -100%;
+	top: 0rem;
+	width: 100%;
+	min-height: 100%;
+	background: #fff;
+	z-index: 9999;	
+}
+#page2 header{
+	height: 2.6rem;
+	font-size: 1.4rem;
+	line-height: 2.6rem;
+	text-align: center;
+}
+#page2 header span{
+	float: left;
+	color: #CCC;
+	padding: 0rem .2rem;
+	height: 2.4rem;
+	font-weight: bold;
+	line-height: 2.4rem;	
+}
+#page2 .topImg{
+	width: 100%;
+	overflow: hidden;
+	height: 14rem;	
+}
+#page2 .topImg img{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+#con{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: .5rem 0rem;
+ 	padding: .3rem;
+}
+#con span{
+	display: block;
+	width: 100%;
+	text-align: center;	
+}
+#page2 .btn{
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	height: 2.6rem;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	line-height: 2.6rem;
+	font-size: 1.6rem;
+	border-radius: .3rem;
+	background: green;	
+}
+/*address*/
+#address{
+	width: 100%;
+	background: rgb(236,235,240);
+
+}
+.addr{
+	text-align: center;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1.4rem;
+}
+#myForm{
+	display: block;
+	background: #fff;
+	width: 96%;
+	font-size: 1.2rem;
+	border-radius: .3rem;
+	margin: 0 2%;
+	padding: .5rem 0rem;	
+}
+#myForm .submit{
+	width: 90%;
+	height: 2.6rem;
+	margin: 0 5%;
+	float: left;
+	border-radius: .3rem;
+	border: none;
+	background: green;
+	color: #fff;	
+}
+.input{
+	margin: .2rem 0rem;
+	height: 2.8rem;
+	border-radius: 1.4rem;
+	float: left;
+	width: 100%;
+	line-height: 2.8rem;
+	font-size: 1.2rem;	
+}
+.textbox label,.input label{
+	display: inline-block;
+	width: 30%;
+	line-height: 2.8rem;	
+	float: left;
+	height: 2.8rem;
+	text-align: center;	
+}
+.textbox textarea,.input input{
+	display: inline-block;
+	width: 60%;
+	float: left;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: solid 1px #ccc;
+	height: 2rem;
+	padding: 0.2rem;
+	font-size: 0.9rem;	
+	background: #FFF;
+	border-radius: .3rem;
+	margin: .3rem 0rem;	
+}
+#myForm .textbox{
+	float: left;
+	width: 100%;
+	margin-bottom: 1.4rem;
+}
+#myForm .textbox textarea{
+	min-height: 4.4rem;
+}

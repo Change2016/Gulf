@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="style.css" rel="stylesheet" />
+<script src="jquery-2.0.0.min.js"></script>
+<title>test</title>
+
+</head>
+
+<body>
+<div id="pages"> 
+<div id="page1">
+<header><img src="logo.png" /></header>
+<div id="list">
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥600</header>
+       <span>优惠套餐(员工内部)</span>
+     </dd>
+   </dl>
+
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥200</header>
+       <span>安装调试费</span>
+     </dd>
+   </dl>
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥120</header>
+       <span>4M 包月</span>
+     </dd>
+   </dl>
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥90</header>
+       <span>2M 包月</span>
+     </dd>
+   </dl>
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥650</header>
+       <span>4M 包半年</span>
+     </dd>
+   </dl>
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥450</header>
+       <span>2M 包半年</span>
+     </dd>
+   </dl>
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥1000</header>
+       <span>4M 包年</span>
+     </dd>
+   </dl>
+   <dl>
+     <dt><img src="goods.png" /></dt>
+     <dd>
+       <header>￥800</header>
+       <span>2M 包年</span>
+     </dd>
+   </dl>
+   <div class="clear"></div>
+</div>
+</div>
+  <div id="page2">
+    <header>
+      <span><</span>
+      详细页面标题
+    </header>
+    <div class="topImg">
+       <img src="top.png" />
+    </div>
+    <div id="con">
+       <header>安装调试费</header>
+       <span>￥200</span>
+    </div>
+    <a href="address.html" class="btn">购买</a>
+  </div>
+</div>
+<script>
+$(function(){
+	var Y,_Y;
+	$("dl").on("touchstart",function(event){
+		var touch = event.originalEvent.changedTouches[0];
+		Y = touch.clientY;
+		});
+	$("dl").on("touchend",function(event){
+	     var touch1 = event.originalEvent.changedTouches[0];
+		 _Y = touch1.clientY;
+		 if(_Y != Y){
+			 return; 
+		 }
+		 $("#con header").html($(this).find("header").html());
+		 $("#con span").html($(this).find("span").html());
+		 $("#page2").addClass("ani");
+		 $("#page2").unbind("webkitAnimationEnd",second);
+		 $("#page2").on("webkitAnimationEnd",first);
+		 $("#page2").on("webkitAnimationStart",function(){$(window).scrollTop(0);});
+	});
+	function first(){
+	     $("#page2").css("right",0).removeClass("ani"); 
+	}
+	function second(){
+		 $("#page2").css("right","-100%").removeClass("back");	 
+	}
+	$("#page2 header span").on("touchstart",function(){
+	    $("#page2").unbind("webkitAnimationEnd",first);
+		$("#page2").on("webkitAnimationEnd",second);
+		$("#page2").addClass("back");
+	});
+
+     
+})
+	
+</script>
+</body>
+</html>
