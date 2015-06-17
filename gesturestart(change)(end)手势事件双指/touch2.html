@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no" >
+<title>touchs</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;	
+}
+article,body,html{
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+article{
+	position: relative; left:0; top: 0;
+	overflow: hidden;	
+}
+#shiw,#page2{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+    display: table;
+}
+#page2{
+	top: 100%;
+	background: orange;	
+}
+#box{
+	width: 40%;
+	margin: 10rem auto;
+	height: 30rem;
+	background: black;	
+}
+</style>
+    <script>
+		//原生js touchstart，touchmove，touchend
+		/*var X,Y,_X,_Y,height = parseInt(window.innerHeight);
+		document.addEventListener("touchstart",touchstart,false);
+		function touchstart(e){
+			X = parseInt(e.touches[0].clientX); 
+			Y =parseInt(e.touches[0].clientY); 
+		}
+		document.addEventListener("touchmove",touchmove,false);
+		function touchmove(e){
+			e.preventDefault();
+			_X = parseInt(e.changedTouches[0].clientX); 
+			_Y = parseInt(e.changedTouches[0].clientY);
+			document.getElementById("page2").style.top = height+_Y-Y+"px";
+		}
+		document.addEventListener("touchend",touchend,false);
+		function touchend(e){
+			if(Math.abs(_X-X)>=Math.abs(_Y-Y)){
+			   return;	
+			}
+			if(_Y-Y>40 || _Y-Y<-40){
+				document.getElementById("page2").style.top = 0;	
+			}else if(-40<_Y-Y<40){
+				document.getElementById("page2").style.top = height+"px";	
+			}
+		}*/
+		//手势事件 两个手指同时触摸
+		document.addEventListener("touchstart",function(e){
+			e.preventDefault();
+			},false);
+		function handleGestureEvent(event){
+			var show = document.getElementById("shiw");
+			switch(event.type){
+				case "gesturestart":
+				      show.innerHTML += "START: "+event.rotation+" /scale: "+event.scale;
+					  break;
+			    case "gesturechange":
+				      event.preventDefault();
+				      show.innerHTML += "<BR/>change: "+event.rotation+" /scale: "+event.scale;
+					  document.getElementById("box").style.webkitTransform = "rotate("+event.rotation+"deg) scale("+event.scale+")";
+					  break;
+				case "gestureend":
+				      show.innerHTML +="<br/>end: "+event.rotation+ " /scale: "+event.scale;
+					  break; 
+			}
+		}
+		document.addEventListener("gesturestart",handleGestureEvent,false);
+		document.addEventListener("gesturechange",handleGestureEvent,false);
+		document.addEventListener("gestureend",handleGestureEvent,false);
+    </script>
+</head>
+<body>
+  <article>
+    <div id="shiw">
+         <div id="box"></div>
+    </div>
+    <div id="page2" style="top:100%;">
+       
+    </div>
+  </article>
+</body>
+</html>
