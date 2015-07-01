@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>touch事件</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="phone.css" />
+    <script src="jquery-2.0.0.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <style>
+        header .col-xs-12 {
+            padding-left: 1rem;
+        }
+        header .input-group-addon {
+            background: url(/GlfTest/20150625/imgs/history.png) right center no-repeat;
+            background-size: auto 100%;
+            padding-left: 2rem;
+            font-weight: bold;
+            color: #fff;
+            padding-right: .6rem;
+        }
+        header form .input-group >div{
+            float: left;
+        }
+        header .input-group .edit{
+            float: right;
+            padding-right: 2rem;
+        }
+        header .input-group{
+            font-weight: bold;
+            color: rgb(122,122,122);
+            line-height: 2.6rem;
+        }
+        header .col-xs-12{
+            padding-left: 0;
+        }
+        .title{
+              
+            background: rgb(192,192,192);
+            height: 3.2rem;
+            line-height: 3.2rem;
+            color: rgb(94,156,179);
+        }
+        .title span{
+             padding-left: 2rem;
+        }
+        .name{
+            clear: both;
+            padding: 1rem 4rem;
+            border-bottom: solid 1px rgb(204,204,204);
+        }
+        .name .glyphicon{
+            font-size: 10rem;
+            color:rgb(94,156,179);
+        }
+        .name span:nth-child(2){
+            padding: 3rem 0rem;
+            padding-left: 4rem;
+        }
+        .empDetail{
+            padding: 1rem 2rem;
+            line-height: 4.6rem;
+            border-bottom: solid 1px rgb(204,204,204);
+        }
+        .empDetail img{
+            display: inline-block;
+            height: 4.6rem;
+            margin-left: 2rem;
+            margin-right: 6rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <form class="bs-example bs-example-form" role="form">
+            <div class="col-xs-12">
+                <div class="input-group text-center">
+                    <span class="input-group-addon" id="history">返回</span>
+               
+                       联系人详情
+                   
+                    <span class="edit">
+                        编辑
+                    </span>
+
+                </div>
+            </div>
+        </form>
+        <div class="clear"></div>
+    </header>
+    <div class="title col-xs-12">
+        <span>联系人</span>
+    </div>
+    <div class="name">
+        <span class="glyphicon glyphicon-user pull-left" aria-hidden="true"></span>
+        <span class="pull-left">
+            顾林飞<br />
+            云事业部
+        </span>
+        <div class="clear">
+            
+        </div>
+    </div>
+    <div class="empDetail col-xs-12">
+        <img src="/GlfTest/20150625/imgs/cellPhone.png" />
+        <span>18565657026</span>
+    </div>
+    <div class="empDetail col-xs-12">
+        <img src="/GlfTest/20150625/imgs/telphone.png" />
+        <span>83438000</span>
+    </div>
+    <div class="empDetail col-xs-12">
+        <img src="/GlfTest/20150625/imgs/email.png" />
+        <span>gulf@tsta.com.cn</span>
+    </div>
+    <div class="empDetail col-xs-12">
+        <img src="/GlfTest/20150625/imgs/position.png" />
+        <span>HTML5前端工程师</span>
+    </div>
+    <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="active col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/phone.png" />
+                    </div>
+                    <div class="caption text-center">
+                        手机
+                    </div>
+                </a>
+            </li>
+            <li class="col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/message.png" />
+                    </div>
+                    <div class="caption text-center">
+                        消息
+                    </div>
+                </a>
+            </li>
+            <li class="col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/mark.png" />
+                    </div>
+                    <div class="caption text-center">
+                        标记
+                    </div>
+                </a>
+            </li>
+            <li class="col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/setUp.png" />
+                    </div>
+                    <div class="caption text-center">
+                        设置
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+    <script>
+        $(function () {
+            $("#history").on("click", function () {
+                history.go(-1);
+            })
+        })
+    </script>
+</body>
+</html>

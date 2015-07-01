@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>touch事件</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="phone.css" />
+    <script src="jquery-2.0.0.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <style>
+        header.col-sm-12:before {
+            content: "搜索";
+            position: absolute;
+            width: 4rem;
+            height: 100%;
+            left: 0;
+            height: 0;
+            text-align: center;
+            top: 0;
+            line-height: 5rem;
+        } 
+    </style>
+</head>
+<body>
+    <header>
+        <form class="bs-example bs-example-form" role="form">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">搜索：</span>
+                    <div class="input">
+                        <input type="text" class="form-control" placeholder="请输入需要查找的联系人" />
+                    </div>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </form>
+    </header>
+
+    <ul class="navUl nav">
+        <li>清华天安</li>
+        <li class="active">云事业部</li>
+    </ul>
+    
+    <div class="dep col-xs-12">
+        <header>云事业部</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="dep col-xs-12">
+        <header>行政人事部</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="dep col-xs-12">
+        <header>合约部</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="dep col-xs-12">
+        <header>工程部</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>     
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>  
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="dep col-xs-12">
+        <header>公司领导</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="clearfix"></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="dep col-xs-12">
+        <header>驻地</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="clearfix"></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="dep col-xs-12 depLast">
+        <header>运营部</header>
+        <div class="emp">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                    <span class="pull-left info">
+                        顾林飞<br />
+                        云事业部
+                    </span>
+                    <span class="pull-left info">
+                        18565657026<br />
+                        83438000
+                    </span>
+                    <span class="badge">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </span>
+                </li>
+                <li class="clearfix"></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="active col-xs-3">
+                    <a href="">
+                        <div class="thumbnail">
+                            <img src="/GlfTest/20150625/imgs/phone.png" />
+                        </div>
+                        <div class="caption text-center">
+                            手机
+                        </div>
+                    </a>
+                </li>
+                <li class="col-xs-3">
+                    <a href="" >
+                        <div class="thumbnail">
+                            <img src="/GlfTest/20150625/imgs/message.png" />
+                        </div>
+                        <div class="caption text-center">
+                            消息
+                        </div>
+                    </a>
+                </li>
+                <li class="col-xs-3">
+                    <a href="" >
+                        <div class="thumbnail">
+                            <img src="/GlfTest/20150625/imgs/mark.png" />
+                        </div>
+                        <div class="caption text-center">
+                            标记
+                        </div>
+                    </a>
+                </li>
+                <li class="col-xs-3">
+                    <a href="">
+                        <div class="thumbnail">
+                            <img src="/GlfTest/20150625/imgs/setUp.png" />
+                        </div>
+                        <div class="caption text-center">
+                            设置
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+    </nav>
+
+    <script>
+        $(function () {
+            $(".dep>header").on("touchstart", function () {
+                if ($(this).siblings(".emp").is(":hidden")) {
+                    $(this).parent().siblings().children("header").removeClass("focus");
+                    $(this).addClass("focus");
+                    $(this).parent().siblings().children(".emp:visible").slideUp(500);
+                    $(this).siblings(".emp").slideDown(500);
+                } else {
+                    $(this).removeClass("focus");
+                    $(this).siblings(".emp").slideUp(500);
+                }
+
+            });
+        })
+    </script>
+</body>
+</html>

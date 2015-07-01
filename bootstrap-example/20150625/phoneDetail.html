@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>touch事件</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="phone.css" />
+    <script src="jquery-2.0.0.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <style>
+        .num{
+            background: rgb(192,192,192);
+            height: 3.2rem;
+            line-height: 3.2rem;
+            color: rgb(94,156,179);
+        }
+        .num span:first-child{
+            float: left;
+            padding-left: 2rem;
+        }
+        .num span:last-child{
+            float: right;
+            padding-right: 2rem;
+        }
+        header .col-xs-12{
+            padding-left: 1rem;
+        }
+        header .input-group-addon{
+            background:url(/GlfTest/20150625/imgs/history.png) right center no-repeat;
+            background-size: auto 100%;
+            padding-left: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        header .input-group .input{
+            padding: 0rem 1rem;
+        }
+      
+    </style>
+</head>
+<body>
+    <header>
+        <form class="bs-example bs-example-form" role="form">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon" id="history">返回</span>
+                    <div class="input">
+                        <input type="text" class="form-control" placeholder="请输入需要查找的联系人" />
+                    </div>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+
+                </div>
+            </div>
+        </form>
+        <div class="clear"></div>
+    </header>
+    <div class="num col-xs-12">
+        <span>全部联系人</span>
+        <span>共找到6位</span>
+    </div>
+    <div class="emp clear">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                <span class="pull-left info">
+                    顾林飞<br />
+                    云事业部
+                </span>
+                <span class="pull-left info">
+                    18565657026<br />
+                    83438000
+                </span>
+                <span class="badge">
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </span>
+            </li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                <span class="pull-left info">
+                    顾林飞<br />
+                    云事业部
+                </span>
+                <span class="pull-left info">
+                    18565657026<br />
+                    83438000
+                </span>
+                <span class="badge">
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </span>
+            </li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                <span class="pull-left info">
+                    顾林飞<br />
+                    云事业部
+                </span>
+                <span class="pull-left info">
+                    18565657026<br />
+                    83438000
+                </span>
+                <span class="badge">
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </span>
+            </li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-user pull-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                <span class="pull-left info">
+                    顾林飞<br />
+                    云事业部
+                </span>
+                <span class="pull-left info">
+                    18565657026<br />
+                    83438000
+                </span>
+                <span class="badge">
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </span>
+            </li>
+            
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <nav id="footer" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="active col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/phone.png" />
+                    </div>
+                    <div class="caption text-center">
+                        手机
+                    </div>
+                </a>
+            </li>
+            <li class="col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/message.png" />
+                    </div>
+                    <div class="caption text-center">
+                        消息
+                    </div>
+                </a>
+            </li>
+            <li class="col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/mark.png" />
+                    </div>
+                    <div class="caption text-center">
+                        标记
+                    </div>
+                </a>
+            </li>
+            <li class="col-xs-3">
+                <a href="">
+                    <div class="thumbnail">
+                        <img src="/GlfTest/20150625/imgs/setUp.png" />
+                    </div>
+                    <div class="caption text-center">
+                        设置
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+    <script>
+        $(function () {
+            $("#history").on("click", function () {
+                history.go(-1);
+            })
+        })
+    </script>
+</body>
+</html>
