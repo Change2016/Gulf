@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/demo.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/metroStyle.css" type="text/css">
+    <script type="text/javascript" src="jquery"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.ztree.core-3.5.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.ztree.excheck-3.5.js"></script>
+</head>
+<body>
+    <!--注意还有引入图片为checkbox提供背景-->
+    <ul id="depList1" class="ztree"></ul>
+    <ul id="depList2" class="ztree"></ul>
+    <script>
+        var setting = {
+
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+
+        };
+        var setting2 = {
+            view: {
+                txtSelectedEnable: true
+            },
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+       $.fn.zTree.init($("#depList1"), setting, data);
+       $.fn.zTree.init($("#depList2"), setting2, data);
+    </script>
+</body>
+</html>
