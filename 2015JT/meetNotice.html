@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/public_m.css" />
+<link rel="stylesheet" href="css/wall_m.css"/>
+<title>会议通知</title>
+</head>
+<body>
+<header id="meetNav" class="meetNav"><div class="focus">会议通知</div><div>会议支持</div><div>温馨提示</div></header>
+<article id="meet" class="meet">
+   <section class="block">
+     <div class="title">关于召开招商大会的会议通知</div>
+     <div class="con">
+     各位领导、同事，集团将于2015年12月20日召开招商大会的会议通知<br/><br/>
+       一、会议主题：集团办公会<br/>
+二、会议时间：2015年1月25日<br/>
+三、会议地点：东莞公司风景会议室<br/>
+四、参会人员：<br/>
+集团：董事长、总裁、各总裁助理、各职能中心负责人
+城市公司：总经理、副总经理、各部门负责人
+五、会议安排具体事项<br/>
+请集团各中心指定人员、各城市公司行政经理统计并提供集团各中心、各城市公司全部参会人员名单及来深信息，于1月15日12:00之前发至行政管理中心**邮箱，谢谢！ 
+会议其他具体事项将另行通知。
+     </div>
+   </section>
+   <section>
+     <div class="member clear">
+         <div class="title">会务工作组成员</div>
+         <div class="person">
+            <div class="name">方庆正</div>
+            <div>会务联系人</div>
+         </div>
+         <a class="phone">18565657026</a>
+     </div>
+     <div class="hotel">
+        <div class="title"><span></span>住宿</div>
+        <div class="con"></div>
+     </div>
+     <div class="hotel">
+        <div class="title"><span></span>交通</div>
+        <p>深业泰然集团会议室（地址：车公庙劲松大厦22楼）</p>
+        <div id="map"></div>
+     </div>
+   </section>
+   <section>
+     <div class="hotel">
+        <div class="title"><span></span>天气预报</div>
+        <div class="con">
+           <div>
+              <span>上午</span>
+              <span>下午</span>
+           </div>
+           <p class="time">2015年12月19日</p>
+        </div>
+     </div>
+     <div class="hotel">
+        <div class="title"><span></span>会场注意事项</div>
+        <div class="con">
+           各部门、各公司：<br/>
+1、请现场参会人员于4月1日上午9:45分现场手机扫描签到入场完毕，并自觉维护会场秩序；<br/>
+2、请现场参会人员统一着深色正装；<br/>
+3、会议期间，请将手机设置为静音或震动状态。<br/>
+        </div>
+     </div>
+   </section>
+</article>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+$(function(){
+	$("#meetNav").on("touchend","div",function(){
+	    var index = $(this).index();
+		$(this).addClass("focus").siblings().removeClass("focus");
+		$("#meet>section:eq("+index+")").addClass("block").siblings().removeClass("block");	
+	})	
+})
+</script>
+</body>
+</html>

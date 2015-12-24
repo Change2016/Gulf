@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>screen</title>
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/wall.css">
+</head>
+<style>
+.group{width: 1203px; margin: 0 auto; padding-top: 80px; color: #fff; height: 500px;}
+.group>div{width: 400px; height: 500px; float: left; text-align: center;border-right: solid 1px #fff;}
+.member div{ height: 50px;line-height: 50px; cursor: pointer;}
+.member .focus{ background: red; color: #Fff;}
+.group .result{text-align: left; text-indent: 20px;}
+.group .result .title{ line-height: 50px; font-size: 16px; font-weight: bold;}
+.group .result .group_min{ height: 100px;}
+.group .result .group_min span{ margin-right: 10px;}
+.scroll div{ height:  120px; width: 120px;margin: 150px auto; margin-bottom: 20px; border: solid 1px #fff; position: relative; overflow: hidden;}
+.scroll a{ display: block; width: 100px; line-height: 50px; background: red; color: #fff; margin: 0 auto; border-radius: 5px;}
+.scroll div ul{ position: absolute; left: 0; top: 0; width: 100%; line-height: 40px; }
+.scroll div ul li{font-size: 16px;}
+#scroll>div{ position: absolute; left:0; height: 40px; background: #fff; margin: 0; border: none;}
+.top{ top: 0;}
+.bottom{ bottom: 0;}
+</style>
+<body>
+<div class="header">
+   <div class="logo"><img src="images/logo.png" /><span></span></div>
+   <div class="title"><span>集团会议</span><p>分组</p></div>
+</div>
+<div style="text-align: center; color: #fff;"> 给定分组：[公司一:2组，公司二：3组，公司三:2组；公司四：2组，公司五：3组，公司六：1组，公司七：1组，公司八：3组，公司九：1组]</div>
+<div id="group" class="group">
+  <div id="member" class="member">
+    <div class="focus" data-id="1">公司一</div>
+    <div data-id="2">公司二</div>
+    <div data-id="3">公司三</div>
+    <div data-id="4">公司四</div>
+    <div data-id="5">公司五</div>
+    <div data-id="6">公司六</div>
+    <div data-id="7">公司七</div>
+    <div data-id="8">公司八</div>
+    <div data-id="9">公司九</div>
+  </div>
+  <div class="scroll">
+      <div id="scroll">
+         <div class="top"></div>
+         <ul id="scrollUL">
+           <li data-group="1">一组</li>
+           <li data-group="2">二组</li>
+           <li data-group="3">三组</li>
+         </ul>
+         <div class="bottom"></div>
+      </div>
+      <a href="javascript:void(0)" id="start">开始分组</a>
+  </div>
+  <div class="result" id="result">
+     <div class="resul1">
+        <div class="title">一组</div>
+        <div class="group_min">
+         
+        </div>
+     </div>
+     <div class="resul2">
+        <div class="title">二组</div>
+        <div class="group_min">
+           
+        </div>
+     </div>
+     <div class="resul3">
+        <div class="title">三组</div>
+        <div class="group_min">
+        
+        </div>
+     </div>
+  </div>
+</div>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+$(function(){
+	var nums = [2,3,2,2,3,1,1,3,1],id,group,top,liH,time=0,Ul = $("#scrollUL"),liH = Ul.find("li").first().height(),move = false;
+	$("#member div").click(function(){
+	   if(move){
+		   return;   
+	   }
+	   $(this).addClass("focus").siblings().removeClass("focus");	
+	})
+	$("#start").click(function(){
+		
+		if($("#result").html().indexOf($("#member").find(".focus").html(),0)!=-1){
+		   alert("该公司已分组！！！");
+		   return ;	
+		}
+		if(move){
+		   return;	
+		}
+		move = true;
+	    animat($(this));
+	})
+	function animat(obj){
+		top = parseInt($("#scrollUL").css("top"),10);
+	    if(top==0){
+	        Ul.find("li").first().appendTo($("#scrollUL"));
+		    Ul.css("top",top+liH);
+		    top +=liH;
+		}
+		id = $("#member .focus").attr("data-id"),group = nums[id-1];	
+		$("#scrollUL").animate({top:0},50,function(){
+		    //最后的时候替换结果
+		    //$(this).	
+			time+=100;
+		});
+		console.log(time+" id "+id+" group "+group);
+		if(time == 3000){
+			var list = Ul.find("li:nth-child(2)").attr("data-group"),len=0,length = Ul.find("li").length,html="";
+			console.log("list"+list);
+			if(group>list){
+			   len = length-group + list;   	
+			}else if(group<list){
+			   len = list-group;
+			}
+			for(var i= 0;i<len;i++){
+			   Ul.find("li").last().prependTo(Ul);	
+			}
+			html = "<span>"+$("#member .focus").html()+"</span>";
+		
+			$("#result .resul"+group+" .group_min").append(html);
+			time =0;
+			clearTimeout(t);
+			move = false;  
+			return ;
+		}
+	    var t = setTimeout(animat,100);	
+	}
+})
+</script>
+</body>
+</html>

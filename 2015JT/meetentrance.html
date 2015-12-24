@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/public_m.css" />
+<link rel="stylesheet" href="css/wall_m.css"/>
+<title>手机吐槽输入页面</title>
+</head>
+<body>
+<header>
+   <a href="#" id="nav" class="nav"></a>
+   <div class="navCon">
+      <a href=""><span></span>吐槽墙</a>
+      <a href=""><span></span>投票</a>
+      <a href=""><span></span>抽奖</a>
+      <a href=""><span></span>游戏</a>
+      <a href=""><span></span>打赏</a>
+   </div>
+   吐槽墙
+</header>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+  $(function(){
+	   $("#nav").on("touchend",function(){
+		   $(this).siblings(".navCon").slideToggle();
+		   return false;   
+	   })
+	   $("#say").submit(function(){
+		   
+		   return false;   
+	   })
+  })
+</script>
+</body>
+</html>

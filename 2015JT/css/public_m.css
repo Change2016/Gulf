@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* 
+ * @authors Gulf
+ * 2015/12/10
+ */
+html{font-size: 62.5%;}
+body{font-size: 12px;font-family: "Microsoft YaHei";}
+body,div,p,ul,ol,li,textarea,form,input,h1,h2,h3,h4,h5,h6,dl,dd,dt,img,section,article,aside,header,footer,nav,figure,hgroup{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+a{ text-decoration: none;}
+img{border: 0;}
+article{padding-bottom: 5rem;}
+.clear:after{ content:""; display: block; clear: both;}
+header{ z-index: 999;text-align: center; line-height: 4.6rem; background: rgb(39,144,235); color: #fff; font-size: 1.6rem; font-weight: bold; position: relative;}
+footer.send{z-index: 999;background: #fff;font-size: 1.4rem;position: fixed; bottom: 0; left: 0; height: 4.8rem; border-top: solid 1px #ccc; width: 100%;-webkit-box-sizing: border-box; box-sizing: border-box; padding: 0 5rem;}
+footer.send input{font-size: 1.4rem; height: 3rem; -webkit-appearance: none;border: none; border-bottom: solid 1px rgb(39,144,235); border-radius: 0; width: 100%; margin-top: .9rem;}
+footer.send span{color: #ccc;position: absolute; left: 1rem; top: .9rem;display: block; font-weight: bold;height: 3rem; width: 3rem; font-size: 2rem; text-align: center;line-height: 3rem; border-radius: 50%; -webkit-box-sizing: border-box; box-sizing: border-box; border: solid 1px #CCC;}
+footer.send .submit{position: absolute; right: .5rem; top: .9rem; height: 3rem; margin-top: 0; background: rgb(137,168,201);color: #fff; width: 4rem; text-align: center; border: none; border-radius:.3rem; }

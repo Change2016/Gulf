@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/public_m.css" />
+<link rel="stylesheet" href="css/wall_m.css"/>
+<title>天安数码城</title>
+</head>
+
+<body>
+<header>
+   <a href="#" id="nav" class="nav"></a>
+   <div class="navCon">
+      <a href=""><span></span>签到/分组</a>
+      <a href="vote_m.html"><span></span>吐槽墙</a>
+      <a href=""><span></span>评分</a>
+      <a href=""><span></span>抽奖</a>
+      <a href="award_m.html"><span></span>打赏</a>
+   </div>
+   打赏
+</header>
+
+<article class="vote award">
+  <div class="status">选择您喜欢文章进行打赏</div>
+  <section>
+    <div>
+      <p class="title">建议招商大会的会议文章</p>
+      <p>在新技术基础上，系统地开发利用的可再生能源。</p>
+    </div>
+    <div>
+      <div>
+       <span>一组</span>
+       龙岗、凤岗、天津分公司
+      </div>
+      <a href="award_detail_m.html" class="voted">浏览</a>
+    </div>
+  </section>
+  <section>
+    <div>
+      <p class="title">建议招商大会的会议文章</p>
+      <p>在新技术基础上，系统地开发利用的可再生能源。</p>
+    </div>
+    <div>
+      <div>
+       <span>一组</span>
+       龙岗、凤岗、天津分公司
+      </div>
+      <a href="award_detail_m.html" class="voted">浏览</a>
+    </div>
+  </section>
+  <section>
+    <div>
+      <p class="title">建议招商大会的会议文章</p>
+      <p>在新技术基础上，系统地开发利用的可再生能源。</p>
+    </div>
+    <div>
+      <div>
+       <span>一组</span>
+       龙岗、凤岗、天津分公司
+      </div>
+      <a href="award_detail_m.html" class="voted">浏览</a>
+    </div>
+  </section>
+ 
+</article>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+  $(function(){
+	   $("#nav").on("touchend",function(){
+		   $(this).siblings(".navCon").slideToggle();
+		   return false;   
+	   })
+	   $("#say").submit(function(){
+
+		   return false;   
+	   })
+  })
+</script>
+</body>
+</html>

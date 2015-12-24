@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/public_m.css" />
+<link rel="stylesheet" href="css/wall_m.css"/>
+<title>天安数码城</title>
+<style>
+  
+</style>
+</head>
+
+<body>
+<header>
+   <a href="award_m.html" id="nav" class="nav back"></a>
+   打赏
+</header>
+
+<article class="award_detail">
+       <div class="title">
+         
+        
+             <span>建议招商大会的会议简章</span>
+             
+             <div><span>一组</span> 龙岗、凤岗、天津分公司</div>
+       
+       </div>
+       <div>
+          <div class="words">
+              <div id="word" class="word">
+            
+              </div>
+              <a href="#" id="more">展开∨</a>
+          </div>
+          <div class="code_er">
+              <div>
+                 <a href=""><img src="images/award_a.png" /></a> 
+              </div>
+              <div>
+                 <span>如果觉得文章不错</span>
+                 <p>直接点击图标就可</p>
+                 <p>直接进行打赏</p>
+              </div>
+          </div>
+       </div>
+</article>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+  $(function(){
+	var html = '文章：新华网乌镇12月16日电 以“互联互通、共享共治——构建网络空间命运共同体”为主题的第二届世界互联网大会16日在浙江乌镇开幕，中共中央总书记、'+
+	           '中国国家主席习近平出席大会开幕式并发表讲话。习近平说，互联网让世界变成了“鸡犬之声相闻”的地球村。习近平指出，纵观世界文明发展史，人类先后经历'+
+			   '了农业革命、工业革命、信息革命。每一次产业技术革命，都给人类生产生活带来巨大而深刻的影响。现在，以互联网为代表的信息技术日新月异，引领了社会'+
+			   '生产新变革，创造了人类生活新空间，拓展了国家治理新领域，极大提高了人类认识水平，认识世界、改造世界的能力得到了极大提高。互联网让世界变成'+
+			   '了“鸡犬之声相闻”的地球村，相隔万里的人们不再“老死不相往来”。可以说，世界因互联网而更多彩，生活因互联网而更丰富',short_html=html.substr(0,240)+"...";
+    if(html.length<=240){
+	   $("#word").html(html);
+	   $("#more").hide();
+	   return;
+	}
+	$("#word").html(short_html);
+    $("#more").on("touchend",function(){
+		if($(this).html()=="展开∨"){
+			$(this).html("收起∧").siblings(".word").html(html);
+		}else{
+			$(this).html("展开∨").siblings(".word").html(short_html);
+		}
+	})
+  })
+</script>
+</body>
+</html>

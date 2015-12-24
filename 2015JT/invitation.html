@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>年终大会邀请函！</title>
+    <link href="css/year.css" rel="stylesheet" />
+</head>
+<body>
+    <article id="pages">
+        <section class="page1">
+            <span class="start"><b></b></span>
+            <header>年终会议</header>
+        一、会议主题<br/>
+          复杂科学管理的理论、方法与实践<br/>
+        二、会议议题<br/>
+          会议主要包括但不限于以下议题：<br/>
+          1、复杂科学管理的基本理论：系统思维、互动理论、整体观理论、整合理论、新资源观理论、无序——有序理论及创新理论；<br/>
+          2、复杂科学管理的研究方法：复杂系统建模、复杂系统优化、多agent方法、数据挖掘、统计分析、复杂网络等；<br/>
+          3、复杂经济系统：宏观经济系统，金融系统，企业的成长和结构，生产和供应网络，循环经济，可持续发展理论，技术经济；<br/>
+          4、复杂管理系统：战略管理，基于人的行为的运作管理，基于人的行为的供应链管理，组织行为与人力资源管理，知识管理，技术管理，创业管理，风险管理，现代服务管理，财务管理；<br/>
+          5、复杂社会系统：社会网络，公共管理，应急管理。<br/>
+        三、会议时间<br/>
+          2010年10月23——24日<br/>
+        四、会议地点<br/>
+          武汉大学经济与管理学院<br/>
+        五、会议语言<br/>
+          中文、英文<br/>
+        六、联系方式<br/>
+          通讯地址：湖北武汉市 武汉大学经济与管理学院科研外事与学科建设办公室<br/>
+          联系人：李秀毅 老师<br/>
+          邮   编：430072<br/>
+          电   话：027-68753846<br/>
+          传   真：027-68754150<br/>
+          电子邮箱：csm21st@gmail.com<br/>
+          网    站：www.ems.edu.cn/csm
+        </section>
+        <section class="page2">
+            <span class="start"><b></b></span>
+            <div class="comment" id="comment">
+               <dl><dt>服务态度：</dt><dd><span></span><span></span><span></span><span></span><span></span></dd></dl>
+               <dl><dt>送货速度：</dt><dd><span></span><span></span><span></span><span></span><span></span></dd></dl>
+               <!--<dl><dt>需求明确度：</dt><dd><div class="star-five"></div><div class="star-five"></div><div class="star-five"></div><div class="star-five"></div> <div class="star-five"></div></dd></dl>-->
+            </div>
+        </section>
+        <section class="page3">
+            <span class="start"><b></b></span>
+            <div id="countDown">
+               <span class="big">10</span>
+            </div>
+        </section>
+        <section class="page7">
+            <header style="text-align: center;line-height: 4rem;">长按二维码关注</header>
+            <span class="start"><b></b></span>
+            <img src="images/test.png" style="display:inline-block;width: 50%; margin: 0 auto;" />
+            <span class="flyL"></span>
+            <span class="flyR"></span>
+        </section>
+        <section class="page8">
+            <header>人员信息统计表</header>
+            <form action="" method="post">
+               <div class="input">
+                   <label>公司：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>联系人：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>姓名：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>接送机：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>航班号：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>微信号：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>手机号码：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <label>身份证号：</label><input type="text" placeholder="" />
+               </div>
+               <div class="input">
+                   <input type="submit" class="submit" value="提交" />
+               </div>
+            </form>
+        </section>
+    </article>
+    <div id="loading">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="loading-text">
+            loading...
+        </div>
+    </div>
+    <script src="js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/next.js"></script>
+    <script>
+        $(function () {
+            $("#loading").hide();
+			$("#comment").on("touchstart","dd",function(){
+			   $(this).addClass("focus").prevAll("span").addClass("focus");
+			   $(this).nextAll("span").removeClass("focus");
+			   return ;
+			})
+			$("#comment").on("touchend","dl dd span",function(){
+			   $(this).addClass("focus").prevAll("span").addClass("focus");
+			   $(this).nextAll("span").removeClass("focus");
+			   return ;
+			})
+			var countDown = $("#countDown").find("span"),
+			    t = setInterval(function(){
+					var num = countDown.html();
+					if(num>=1){
+				       countDown.html(--num);
+					}else{
+					   countDown.removeClass("big");
+					   clearInterval(t);
+					}
+				},1000)
+        })
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: "@LiteCMS.Common.ConstantsBase.APP_ID", // 必填，公众号的唯一标识
+            timestamp: "@ViewBag.timestamp", // 必填，生成签名的时间戳
+            nonceStr: "@ViewBag.nonceStr", // 必填，生成签名的随机串
+            signature: "@ViewBag.signature",// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '凤巢计划，邀你筑巢-凤岗天安数码城开工奠基典礼邀请函！',
+                link: location.href, 
+                imgUrl: 'http://' + location.host + '/Content/images/lglogo.png',
+                success: function () { 
+                   alert("分享成功");
+                },
+                cancel: function () {
+                   
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: '凤巢计划，邀你筑巢-凤岗天安数码城开工奠基典礼邀请函！',
+                desc: '11月28日，凤岗天安数码城将隆重奠基，期待与您一起，再创奇迹。到场嘉宾将享有物业优先定制权以及精美纪念品。', 
+                link: location.href, 
+                imgUrl: 'http://' + location.host + '/Content/images/lglogo.png', 
+                type: '',
+                dataUrl: '', 
+                success: function () {
+                   
+                },
+                cancel: function () {
+                   
+                }
+            });
+        });
+    </script>
+    <script>
+	
+	$(function(){
+	  //聊天代码
+	  function addMSG(){
+	   	
+	  }
+	  function updateMSG(){
+		$.ajax({
+			url:"",
+			type:"post",
+			success: function(){
+			  
+			}
+		})
+	  }
+		
+    })
+	</script>
+</body>
+</html>

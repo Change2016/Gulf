@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="css/public_m.css" />
+<link rel="stylesheet" href="css/wall_m.css"/>
+</head>
+<body>
+<header><a href="vote_m.html" class="back"></a> 评分</header>
+<article class="vote vote_detail">
+   <p id="mth"></p>
+   <section class="statistics">
+       <span><img src="images/com_logo.png" /></span>
+       <div>
+          <p>天安数码城天津分公司</p>
+       </div>
+       <div>
+          <p>综合评分：<font id="point">23</font>分</p>
+          <p>评分人数：<font id="count">23</font>人</p>
+       </div>
+   </section>
+   <section class="grade">
+    <span>评分</span>小提示：触摸、拖动、点击星星改变分值
+   </section>
+   <section id="star">
+   <form action="" method="post">
+     <div> 
+         <p>市场敏感度：对市场/政策/环境等理解的广度/深度/全面度</p>
+         <div>
+             <a href="#" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="4" name="" value="20" />
+             </div>
+             <div  class="score">
+                20分
+             </div>
+         </div>
+     </div>
+     
+     <div>
+         <p>汇报内容：条理性、完整性、逻辑思路清晰度</p>
+         <div>
+             <a href="javascript:void(0)" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="4" name="" value="20" />
+             </div>
+             <div  class="score">
+                20分
+             </div>
+         </div>
+     </div>
+     
+     <div>
+         <p>创新能力：基于2016年市场环境下的行动方式具有创新力</p>
+         <div>
+             <a href="javascript:void(0)" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="4" name="create" value="20" />
+             </div>
+             <div  class="score">
+                20分
+             </div>
+         </div>
+     </div>
+     <div>
+         <p>方案可执行：</p>
+         <div>
+             <a href="javascript:void(0)" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="2" name="execute" value="10" />
+             </div>
+             <div  class="score">
+                10分
+             </div>
+         </div>
+     </div>
+     <div>
+         <p>对项目自身难点理解的全面性及深度：</p>
+         <div>
+             <a href="javascript:void(0)" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="2" name="know" value="10" />
+             </div>
+             <div  class="score">
+                10分
+             </div>
+         </div>
+     </div>
+     <div>
+         <p>汇报人：表达方式、感染力：</p>
+         <div>
+             <a href="javascript:void(0)" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="2" name="voice" value="10" />
+             </div>
+             <div  class="score">
+                10分
+             </div>
+         </div>
+     </div>
+     <div>
+         <p>汇报人：汇报时间控制：</p>
+         <div>
+             <a href="javascript:void(0)" class="reduce">-</a>
+             <div class="star">
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <span class="focus"></span>
+                 <input type="hidden" data-score="2" name="timeControl" value="10" />
+             </div>
+             <div  class="score">
+                10分
+             </div>
+         </div>
+     </div>
+     <input type="submit" class="submit" value="提交" />
+     </form>
+   </section>
+   
+</article>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+ $(function(){
+	 var during = true,X=_X=0,width,_width = $("#star .star").find("span").first().outerWidth(),left = $("#star .star").first().get(0).offsetLeft,num = $("#star .star").first().find("span").length;
+   	 $("#star").on("touchend",".reduce",function(e){
+		
+		if($(this).siblings(".star").find(".focus,.half").length==0||!during){
+		    return;	
+		}
+		var index,scoreA,score=$(this).siblings(".star").find("input").attr("data-score");
+		during = false;
+	    if($(this).siblings(".star").find(".half").length){
+			index = $(this).siblings(".star").find(".half").index();
+		   	$(this).siblings(".star").find(".half").removeClass("half");
+			scoreA = score*index;
+		}else{
+			index = $(this).siblings(".star").find(".focus").last().index()+1;
+		    $(this).siblings(".star").find(".focus").last().attr("class","half");
+			scoreA = score*index-score/2;	
+		}
+		$(this).siblings(".score").html(scoreA+"分")
+		during = true;
+		return false;
+	 });
+	 /*$("#star").on("touchend",".star span",function(){
+		var index = $(this).index()+1,score = $(this).siblings("input").attr("data-score");
+	    $(this).addClass("focus").prevAll().addClass("focus");
+		$(this).nextAll().removeClass("focus");
+		$(this).siblings().removeClass("half").siblings("input").val(score*index);
+		$(this).parent().siblings(".score").html(score*index+"分");	 
+	 })*/
+	 $("#star").on("touchstart",".star",touchstart);
+	 $("#star").on("touchmove",".star",touchmove);
+	 $("#star").on("touchend",".star",touchend);
+	 var _score;
+	 function touchstart(e){
+		width = $(this).outerWidth();
+		X = parseInt(e.originalEvent.changedTouches[0].clientX);
+		
+		var index = Math.ceil((X-left)/_width);
+		_score = $(this).find("input").attr("data-score");
+		if(index<=num){
+	    change(index,_score,$(this));
+		}
+		console.log("start"+" X/ "+X+" width /"+width+" _width/ "+_width+" left/ "+index);
+	 }
+	 function touchmove(e){
+		e.preventDefault();
+		_X = parseInt(e.originalEvent.changedTouches[0].clientX);
+		
+		var index = Math.ceil((_X-left)/_width);
+		if(index<=num){
+		change(index,_score,$(this));
+	    }
+	 }
+	 function touchend(e){
+		_X = parseInt(e.originalEvent.changedTouches[0].clientX);
+	   if(_X=X){
+		   X=_X=0;
+		   return ;  
+	   }
+		var index = Math.ceil((_X-left)/_width);
+		if(index<=num){
+		}
+		X=_X=0;
+	 }
+	 function change(index,score,obj){
+		obj.find("span").removeClass("focus").removeClass("half");
+		obj.find("span:nth-child("+index+")").addClass("focus").prevAll().addClass("focus");
+		obj.find("input").val(score*index);
+		obj.siblings(".score").html(score*index+"分");	 
+	 }
+ })
+</script>
+</body>
+</html>
